@@ -47,6 +47,8 @@ int main(){
     start = std::chrono::high_resolution_clock::now();
     std::thread t([&](){fill(array, size, 0, 2, fill_it_up);});
     std::thread t1([&](){fill(array, size, 1, 2, fill_it_up);});
+    //std::thread t(fill<Int>, array, size, 0, 2, fill_it_up);
+    //std::thread t1(fill<Int>, array, size, 1, 2, fill_it_up);
     t.join();
     t1.join();
     stop = std::chrono::high_resolution_clock::now();
